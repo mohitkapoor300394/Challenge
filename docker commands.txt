@@ -1,0 +1,13 @@
+cd (to your folder where script is)
+
+docker build --build-arg=export_file=spec.json -t mohit-docker.
+
+docker run  mohit-docker
+
+docker ps -a (will return a container Id) – in this case lets assume it is container_id
+
+#If we need to export our files from the docker environment
+
+docker cp container_id:/mohitcsv.csv mohitcsv.csv
+
+docker cp container_id:/fixedWidthFile.txt fixedWidthFile.txt
